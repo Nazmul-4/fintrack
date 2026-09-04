@@ -1,9 +1,7 @@
-// server.js — This file actually STARTS the server (separated from app.js on purpose)
-
 const app = require('./app');
+const env = require('./config/env');
+const logger = require('./utils/logger');
 
-const PORT = 5000;
-
-app.listen(PORT, () => {
-  console.log(`✅ Server is running on http://localhost:${PORT}`);
+app.listen(env.port, () => {
+  logger.info(`Server is running on http://localhost:${env.port} [${env.nodeEnv}]`);
 });
