@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Environment variables (SECRETS — never commit!)
+.env
+.env.local
+.env.production
+
+# Build outputs
+dist/
+build/
+
+# Firebase service account key (SECRET!)
+serviceAccountKey.json
+*.pem
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+.vscode/settings.json
