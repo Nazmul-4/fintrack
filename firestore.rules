@@ -1,0 +1,13 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Deny all direct client reads/writes to every collection.
+    // Our Express backend (Admin SDK) bypasses these rules entirely,
+    // so the app continues to work normally — only DIRECT frontend
+    // access to Firestore is blocked.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
